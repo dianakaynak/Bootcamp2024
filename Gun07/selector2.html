@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selectors 2</title>
+
+    <style>
+        .onemli {
+            border-left: 10px solid green;
+        }
+
+        /*onemliden sonraki ilk li*/
+        .onemli+li {
+            border-left: 10px solid red;
+        }
+
+        /*onemsizdeki sonra li ler*/
+        .onemsiz~li {
+            border-left: 10px solid cyan;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul>
+        <li>Lorem, ipsum.</li>
+        <li>Lorem, ipsum.</li>
+        <li class="onemli">Lorem, ipsum.</li>
+        <li>Lorem, ipsum.</li>
+        <li>Lorem, ipsum.</li>
+        <li>Lorem, ipsum.</li>
+        <li>Lorem, ipsum.</li>
+        <li class="onemsiz">Lorem, ipsum.</li>
+        <li>Lorem, ipsum.</li>
+        <li>Lorem, ipsum.</li>
+    </ul>
+</body>
+
+</html>
