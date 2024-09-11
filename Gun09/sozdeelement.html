@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sözde Element</title>
+    <style>
+        html {
+            font-size: 24px;
+        }
+
+        p {
+            text-align: justify;
+        }
+
+        p::first-letter {
+            font-size: 300%;
+            float: left;
+            line-height: .75;
+            font-weight: bold;
+        }
+
+        p::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        p::first-line {
+            text-decoration: underline;
+        }
+
+        main {
+            background-color: rgba(242, 150, 208, 0.755);
+            max-width: 600px;
+            margin: 60px auto 20px;
+            /*üstten alttan ve yanlardan ve aşağıdan*/
+            font-weight: bold;
+            background-color: #D9AFD9;
+            background-image: linear-gradient(0deg, #4a134a 0%, #97D9E1 100%);
+            padding: 36px;
+            border-radius: 10px;
+            box-shadow: 2px 3px 20px black, 0 0 60px #8a4d0f inset;
+            background: #fffef0;
+        }
+
+        @media(max-width:600px) {
+            main {
+                margin: 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Optio ex aspernatur cumque sint. Voluptates
+            repudiandae
+            asperiores non quos est vitae, sed quo alias id iste. Quaerat rem aliquid aspernatur voluptatum.</p>
+        <p>Fuga nam eveniet inventore illum ad dicta, nulla veritatis commodi quam laborum voluptatum magnam iure nisi
+            assumenda similique blanditiis quod dolore, optio accusantium culpa aspernatur maxime! Dolor sint quidem
+            dicta.
+        </p>
+        <p>Quaerat pariatur atque in, harum quasi inventore eius doloribus, impedit laborum itaque, dignissimos
+            similique
+            corrupti maxime ab. Cupiditate, temporibus dolores blanditiis, minus suscipit nisi accusamus amet eveniet,
+            quis
+            in deleniti?</p>
+        <p>Ducimus eum recusandae molestiae dolorum? In quam maxime, unde fugiat eum facere aspernatur nobis incidunt
+            porro
+            neque soluta laborum temporibus vel a necessitatibus iure aperiam veritatis libero itaque sed qui.</p>
+    </main>
+</body>
+
+</html>
