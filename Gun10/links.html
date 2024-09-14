@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linkler</title>
+    <style>
+        .link2 {
+            text-decoration: none;
+        }
+
+        .link3 {
+            color: red;
+        }
+
+        .link4 {
+            color: orange;
+            text-decoration: none;
+        }
+
+        .link4:hover {
+            color: white;
+            background-color: orange;
+        }
+
+        .link5:active {
+            outline: 3px solid rgb(106, 72, 77);
+            background: rgb(119, 214, 249);
+            color: white;
+            text-decoration: none;
+        }
+
+        .link6 {
+            display: inline-block;
+            text-decoration: none;
+            background: #87408c;
+            color: rgb(230, 30, 186);
+            padding: 8px 16px;
+            border-radius: 4px;
+        }
+
+        .link6:hover {
+            background: #a77eaa;
+        }
+
+        .link6:active {
+            background: #7d1687;
+        }
+
+        .link6:focus {
+            outline: 3px solid #9a1055;
+            outline-offset: 0;
+        }
+
+        .link7 {
+            display: inline-block;
+            background-color: cyan;
+            color: white;
+            padding: .5rem 1rem;
+            text-decoration: none;
+            font-weight: 600;
+            font-family: Arial, Helvetica, sans-serif;
+            transition: all .5s;
+            /*geçiş süresi*/
+            box-shadow: 2px 3px rgba(22, 1, 22, 0.5);
+
+        }
+
+        .link7:hover {
+            background-color: magenta;
+
+        }
+
+        .link7:active {
+            background-color: rgb(81, 13, 81);
+            transform: scale(2) rotate(360deg);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- #->mevcut sayfada kalır -->
+    <a href="#" class="link1">Link 1</a>
+    <a href="#" class="link2">Link 2</a>
+    <a href="#" class="link3">Link 3</a>
+    <a href="#" class="link4">Link 4</a>
+    <a href="#" class="link5">Link 5</a>
+    <a href="#" class="link6">Link 6</a>
+    <a href="#" class="link7">Link 7</a>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis modi illum, aliquam cumque beatae tempora
+        nisi numquam alias architecto repudiandae atque inventore distinctio voluptas consequatur. Dolores minus nemo
+        accusantium provident!</p>
+</body>
+
+</html>
