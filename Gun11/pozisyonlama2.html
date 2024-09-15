@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pozisyonlama 2</title>
+    <style>
+        .kutu {
+            background-color: pink;
+            width: 100px;
+            height: 100px;
+            position: relative;
+        }
+
+        .poke {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+
+        .uzun {
+            position: relative;
+        }
+
+        .agac {
+            position: absolute;
+            left: calc(50% - 50px);
+            top: calc(50% - 50px);
+            /*resmin boyutunu ikiye bölüp çıkarıyoruz ki sayfaya tam ortalansın*/
+            z-index: -1;
+            opacity: .5;
+        }
+
+        /*mutlak pozisyonlama yapılan bir elementin konumu normalde tarayıcının görünen kısmına göre yapılır.Ancak parent elementinde position:relative varsa onun sınırları dahilinde konumlandırma yapılacaktır.*/
+    </style>
+</head>
+
+<body>
+    <h1>Başlık</h1>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cum facere atque est velit reprehenderit voluptas
+        blanditiis accusamus, praesentium eaque itaque sunt id explicabo enim ipsam quae corrupti harum corporis
+        temporibus?</p>
+    <div class="kutu">
+        <img class="poke" src="pikk.png" alt="pokemon">
+    </div>
+    <p class="uzun">
+        <img class="agac" src="palm-tree.png" alt="agac" height="100">Lorem ipsum dolor sit amet, consectetur
+        adipisicing elit. Eius
+        similique placeat rem deserunt. Consequatur temporibus non tempora, aut adipisci labore numquam beatae rem eum
+        doloribus ipsam est, incidunt eligendi unde repellendus recusandae accusantium. Dicta deleniti, harum vero
+        minima eos ut esse commodi, nihil illo mollitia, cumque perspiciatis. Eos qui minima voluptas quaerat ut
+        nesciunt est distinctio mollitia, error minus dolorem ratione illo? Laboriosam, totam! Illo quam numquam,
+        explicabo corporis officiis eveniet consequuntur. Laudantium ab corporis rem quaerat odit itaque iure nobis aut
+        minima fugit. Inventore, cupiditate quod necessitatibus ipsa officiis commodi excepturi soluta blanditiis
+        molestiae a. Assumenda vel veniam reiciendis nisi unde at minus voluptatem est non sequi, sed similique sunt,
+        dolores temporibus possimus. Dolores, aliquam. Nemo autem neque, maxime minus accusamus omnis, blanditiis
+        voluptas consectetur molestiae sit nisi dolore similique! Nam, odio explicabo? Dignissimos nesciunt autem
+        blanditiis magni et quasi, molestias nam magnam, voluptatum perferendis fugit nulla provident sunt?
+    </p>
+</body>
+
+</html>
