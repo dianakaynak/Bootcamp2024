@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borders</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            background-color: #8EC5FC;
+            background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+            ;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        div {
+            margin-bottom: 10px;
+        }
+
+        .kutu1 {
+            height: 100px;
+            /* border-width: 3px;
+            border-style: solid;
+            border-color: black; */
+            border: 3px solid black;
+        }
+
+        .kutu2 {
+            height: 100px;
+            border-top: 5px dotted green;
+            border-right: 10px dotted red;
+            border-bottom: 15px double blue;
+            border-left: 20px groove orange
+        }
+
+        .kutu3 {
+            width: 100px;
+            height: 100px;
+            border: 50px solid black;
+            border-color: yellow brown purple green;
+        }
+
+        .kutu4 {
+            width: 100px;
+            height: 100px;
+            border: 50px solid black;
+            border-color: transparent transparent turquoise turquoise;
+        }
+
+        .kutu5 {
+            width: 100px;
+            height: 100px;
+            border: 50px solid black;
+            border-top-width: 0;
+            border-bottom-width: 100px;
+            border-color: transparent transparent purple transparent;
+        }
+
+        .kutu6 {
+            height: 150px;
+            border-style: solid;
+            border-width: 10px 20px 30px 40px;
+            border-radius: 10px;
+            border-color: red green blue yellow;
+        }
+
+        .kutu7 {
+            height: 150px;
+            background-color: #73e2de;
+            border-radius: 10px 20px 30px 40px;
+        }
+
+        .kutu8 {
+            width: 100px;
+            height: 100px;
+            background-color: #de5b6e;
+            border-radius: 50%;
+        }
+
+        .kutu9 {
+            height: 120px;
+            border: 30px solid transparent;
+            border-image: url(cicek.png) 20 stretch;
+
+        }
+
+        .kutu10 {
+            background-color: yellow;
+            border: 10px solid transparent;
+            border-image: url(cicek.png) 20 round;
+            height: 120px;
+            margin: 20px 10px;
+            background-clip: padding-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="kutu10"></div>
+    <div class="kutu9"></div>
+    <div class="kutu8"></div>
+    <div class="kutu7"></div>
+    <div class="kutu6"></div>
+    <div class="kutu5"></div>
+    <div class="kutu4"></div>
+    <div class="kutu3"></div>
+    <div class="kutu2"></div>
+    <div class="kutu1"></div>
+
+</body>
+
+</html>
