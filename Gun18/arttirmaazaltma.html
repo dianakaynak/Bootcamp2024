@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Increment & Decrement</title>
+</head>
+
+<body>
+    <script src="../ortak/yaz.js"></script>
+    <script>
+        let a = 1;
+        a++; //a+=1 arasındaki fark nedir?
+        yaz(a);
+
+        let b = 1;
+        yaz(b++ * 3) //b nin değeri kullanım sonrası arttırılır;
+        yaz(b)
+
+        let c = 5;
+        yaz(c++); //5
+        yaz(c);
+
+        let d = 3;
+        yaz(d++ * d); //12
+
+        //++ olunca önce kendi değerini yazdırır sonra bir arttırır!!
+
+        let e = 2;
+        yaz(++e * e) //12
+
+        //artı başta olunca hemen değer artıyor.
+
+        let f = 10;
+        ciz(f-- + --f)
+
+        let g = 3;
+        yaz(++g - g--);
+        ciz(g)
+
+
+        let h = 4;
+        h = h++;
+        yaz(h)
+
+        let i = 7;
+        i = ++i;
+        yaz(i);
+
+
+        temizle()
+
+        let j = 5;
+        j *= j++;
+        ciz(j)
+
+        let k = 0;
+        yaz(k++ - --k)
+        yaz(k)
+
+        let l = 3;
+        l = l + l * l++;
+        yaz(l)
+
+
+        let m = 2;
+        m = m * (m + ++m)
+        yaz(m) // ilk değerler yerlerine yazılıyor
+
+        //mantıksal operatörler konusu işlendikten sonra bakınız
+        let n = 3;
+        let sonuc = n++ == 3 || ++n == 5; //ilk şart sağlanıyorsa yani true ise ikinci değere bakılmıyor ilk n değeri dikkate alınıyor
+        yaz(sonuc);//true
+        yaz(n) //4
+
+        //veya operatörü soldaki ifade true ise sağına hiç bakmaz,değerlendirmeye almaz
+
+        //ve (&&) operatörü sol taraf false ise umudunu yitirir ve sağı hiç değerlenirmeye almaz
+
+
+        let o = 40;
+        yaz(o < 39 && ++o == 40);
+        yaz(o);
+
+        temizle()
+        let p = 2;
+        if (++p == p++);
+        yaz(p)
+
+
+
+    </script>
+</body>
+
+</html>

@@ -75,9 +75,10 @@
         .box2 {
             background-color: white;
             margin-bottom: 2rem;
-            height: 400px;
+            height: 385px;
             box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
             position: relative;
+            overflow: hidden;
         }
 
         .box2>h3 {
@@ -125,6 +126,9 @@
             background-color: #d2d2d2;
         }
 
+        .text-container {
+            margin-left: 10px;
+        }
 
 
         footer {
@@ -132,6 +136,27 @@
             margin-top: 2rem;
 
         }
+
+        .lifirst {
+            list-style: none;
+            padding: 15px 20px;
+            border-bottom: 1px solid rgb(227, 223, 223);
+            display: flex;
+            align-items: center;
+            line-height: 1.5;
+        }
+
+        .lifirst:hover {
+            background-color: #ccc8c8;
+        }
+
+        ul {
+            margin: 0 !important;
+            padding: 0 !important;
+
+        }
+
+
 
         /*990 yap*/
         @media(max-width:600px) {
@@ -191,12 +216,39 @@
                     lorem ipsum and mauris neque quam blog. I want to share my world with you.</p>
             </div>
             <div class="box2">
-                <h3>Popular Posts</h3>
+                <h3 style="margin:0px">Popular Posts</h3>
                 <ul>
                     <li class="lifirst">
-                        <img src="workshop1.jpg" width="16%" alt="workshop">
-                        <h3>Lorem</h3>
-                        <p>Sed mattis nunc</p>
+                        <img src="workshop1.jpg" width="50px" alt="workshop">
+                        <div class="text-container">
+                            <span style="font-size: large;">Lorem</span>
+                            <br>
+                            <span>Sed mattis nunc</span>
+                        </div>
+                    </li>
+                    <li class="lifirst">
+                        <img src="gondol2.jpg" width="50px" alt="gondol">
+                        <div class="text-container">
+                            <span style="font-size: large;">Lorem</span>
+                            <br>
+                            <span>Sed mattis nunc</span>
+                        </div>
+                    </li>
+                    <li class="lifirst">
+                        <img src="skies3.jpg" width="50px" alt="skies">
+                        <div class="text-container">
+                            <span style="font-size: large;">Lorem</span>
+                            <br>
+                            <span>Sed mattis nunc</span>
+                        </div>
+                    </li>
+                    <li class="lifirst" style=" border-bottom: none">
+                        <img src="rock4.jpg" width="50px" alt="rock">
+                        <div class="text-container">
+                            <span style="font-size: large;">Lorem</span>
+                            <br>
+                            <span>Sed mattis nunc</span>
+                        </div>
                     </li>
                 </ul>
             </div>
