@@ -72,6 +72,15 @@
 
         }
 
+        .box-1 {
+            background-color: white;
+            margin-bottom: 2rem;
+            height: 400px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            position: relative;
+
+        }
+
         .box2 {
             background-color: white;
             margin-bottom: 2rem;
@@ -85,6 +94,34 @@
             padding: 20px 16px !important;
             background-color: #f1f1f1;
         }
+
+        .box3 {
+
+            background-color: white;
+            margin-bottom: 2rem;
+            height: 190px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            position: relative;
+
+        }
+
+        .box3>h3 {
+            background-color: #f1f1f1;
+            padding: 16px;
+            font-weight: 400;
+        }
+
+        .tag {
+            background-color: #f1f1f1;
+            margin-right: 5px;
+            display: inline-block;
+            margin-bottom: 10px;
+            font-weight: 300;
+            font-size: smaller;
+            padding: 2px 4px;
+
+        }
+
 
         .comments {
             position: absolute;
@@ -134,6 +171,7 @@
         footer {
             background-color: #616161;
             margin-top: 2rem;
+            height: 200px;
 
         }
 
@@ -156,6 +194,48 @@
 
         }
 
+        .btn-btn {
+            padding: 14px 22px;
+            background-color: black;
+            color: white;
+            margin-top: 25px;
+            margin-left: 15px;
+            font-size: medium;
+            border: none;
+            margin-right: -10px;
+            opacity: 0.3;
+        }
+
+        .btn-btn:hover {
+            background-color: #bab6b6;
+            color: #616161;
+            cursor: not-allowed;
+        }
+
+        .btn-btn2 {
+            padding: 14px 22px;
+            background-color: black;
+            color: white;
+            margin-top: 25px;
+            margin-left: 15px;
+            font-size: medium;
+            border: none;
+        }
+
+        .btn-btn2:hover {
+            background-color: #aaa9a9;
+            color: #222222
+        }
+
+        .par-1 {
+            color: white;
+            margin-top: 30px;
+            font-weight: 300;
+        }
+
+        .a-tag {
+            color: white;
+        }
 
 
         /*990 yap*/
@@ -208,7 +288,7 @@
             </div>
         </div>
         <div class="col2">
-            <div class="box2">
+            <div class="box-1">
                 <img src="woman.jpg" width="100%" alt="woman">
                 <h2>My Name</h2>
                 <p class="parag2">Just me, myself and I, exploring the universe of uknownment. I have a heart of love
@@ -252,10 +332,31 @@
                     </li>
                 </ul>
             </div>
-            <div class="box"></div>
+            <div class="box3">
+                <h3>Tags</h3>
+                <p>
+                    <mark style="margin-right: 5px;">Travel</mark>
+                    <span class="tag">New York</span>
+                    <span class="tag">London</span>
+                    <span class="tag">IKEA</span>
+                    <span class="tag">NORWAY</span>
+                    <span class="tag">DIY</span>
+                    <span class="tag">Baby</span>
+                    <span class="tag">Family</span>
+                    <span class="tag">News</span>
+                    <span class="tag">Clothing</span>
+                    <span class="tag">Shopping</span>
+                    <span class="tag">Sports</span>
+                    <span class="tag">Games</span>
+                </p>
+            </div>
         </div>
     </main>
-    <footer>Sayfanın en alt kısmı(copy right ,vs)</footer>
+    <footer>
+        <button class="btn-btn">Previous</button>
+        <button class="btn-btn2">Next »</button>
+        <p class="par-1">Powered by <a class="a-tag" href="https://www.w3schools.com/w3css/default.asp">w3.css</a> </p>
+    </footer>
 </body>
 
 </html>
