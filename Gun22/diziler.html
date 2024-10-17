@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diziler</title>
+</head>
+
+<body>
+
+
+    <script src="../ortak/yaz.js"></script>
+    <script>
+        //              0       1       2      3
+        let apartman = ["betül", "güneş", "metin", "burak"]
+
+        ciz("Apartmandaki kat sayısı: " + apartman.length)
+        ciz("Dizi elemanları: " + apartman.toString())
+
+
+        //dizinin sonuna eleman ekle
+        apartman.push("canap");
+        ciz("canap eklendi:<br>" + apartman);
+
+        //dizinin belirli bir sıradaki elemanına erişme
+        ciz("dizinin 3 nolu indeksindeki eleman: <br>" + apartman[3])
+
+
+
+        //1.indekse "mahmut" stringini koy 
+        apartman[1] = "mahmut";
+        ciz("apartmanın 1. indexine mahmut taşındı:<br>" + apartman)
+
+
+        //bir dizinin başına eleman ekleme
+
+        apartman.unshift("altuğ");
+        ciz("dizinin başına altuğ eklendi :<br>" + apartman)
+
+        //hem alır hem siler
+        let ilki = apartman.shift();
+        yaz("silinen:" + ilki)
+        ciz("dizinin ilk elemanını sildik: <br>" + apartman)
+
+
+        //pop sondakini döndürür ve siler
+        let sonu = apartman.pop();
+        yaz("silinen" + sonu);
+        ciz("dizinin son elemanını sildik: <br>" + apartman)
+
+        //dizinin 1.indexindeki elemanı sil
+        //2.indexteki elemandan başla 1 adet sil
+        apartman.splice(2, 1);
+        yaz("2.indexteki elemanı sildikten sonra: ");
+        ciz(apartman);
+
+
+        yaz("2.indeksine'sezai' eleman koy:")
+        apartman.splice(2, 0, "sezai");
+        ciz(apartman);
+    </script>
+</body>
+
+</html>
