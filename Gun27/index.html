@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yapılacaklar Uygulaması</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/5.3.3/yeti/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar bg-body-tertiary" ßdata-bs-theme="dark">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1 mx-auto">Yapılacaklar Listem</span>
+        </div>
+    </nav>
+
+    <div class="container">
+
+        <form id="frmTask" class="row mt-5 gy-2 gx-3 align-items-center">
+            <div class="col">
+                <input type="text" class="form-control form-control-lg" id="task" placeholder="Ne yapacaksın?" required>
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-lg btn-primary">Ekle</button>
+            </div>
+        </form>
+
+        <div id="todos" class="mt-4 todos">
+
+
+
+
+        </div>
+    </div>
+
+
+    <script src="site.js"></script>
+</body>
+
+</html>
+
+<!-- geliştirmeler: 
+ 1. ekran çok geniş olursa içeriğin genişliğini sabit tut (max-width) 
+ 2. form'u large yap (bootstrap sizing)
+ 3. ekle yazısı yerine belki font-awesome kullanılabilir
+ 4. eğer hiç bir görev yoksa "henüz bir görev eklenmemiş" gibi bir şey yazabilir
+ -->

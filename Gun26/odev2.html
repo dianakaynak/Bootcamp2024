@@ -1,0 +1,56 @@
+<!-- ÖDEV 2:
+Bir kare yapın. Bu kareye tıklayınca sayfa üzerinde rastgele bir yere
+gitsin. (ipuçları: css'teki mutlak pozisyonlamadan yararlanılabilir.)
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ödev 2</title>
+
+    <style>
+        body {
+            position: relative;
+        }
+
+        .karestyle {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(225, 0, 255);
+            position: absolute;
+            cursor: pointer;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="kare" class="karestyle"></div>
+
+    <script>
+
+        const kare = document.getElementById("kare");
+
+        kare.addEventListener('click', function () {
+
+            const x = window.innerWidth - 100;
+            const y = window.innerHeight - 100;
+
+
+            const rastgelex = Math.floor(Math.random() * x);
+            const rastgeley = Math.floor(Math.random() * y);
+
+
+            kare.style.left = `${rastgelex}px`
+            kare.style.top = `${rastgeley}px`
+
+        })
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!-- GÖREV 3: Bir metin kutusu koyun. Kullanıcı oraya renk kodu girince
+ sayfanın arkaplan rengi o renk olsun. Örnek inputlar:
+ red, orange, #fafafa, #e3c, rgb(253, 33, 128), vs.. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ödev 3</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+        integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        body {
+            padding: 20px;
+        }
+
+        .inputt {
+            width: 300px;
+            height: 40px;
+            border: 2px solid black;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Sayfanın rengini seçiniz</h2>
+    <input class="inputt" type="text" placeholder="Lütfen renk istediğiniz rengi giriniz..">
+    <button id="btn" class="btn btn-success">Renk Değiştir</button>
+
+
+    <script>
+        const buton = document.getElementById("btn")
+        const input = document.querySelector(".inputt")
+
+
+        buton.addEventListener('click', function () {
+            const renkKodu = input.value;
+            document.body.style.backgroundColor = renkKodu;
+        });
+
+    </script>
+</body>
+
+</html>

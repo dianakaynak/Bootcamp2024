@@ -1,0 +1,49 @@
+<!--  Ödev 1
+    JavaScript ile 100 buton koy ve her birinde 0 yazsın
+    Hangisine tıklanırsa onun değeri 1 artsın.
+    CSS ile bu 100 butonu 10X10 luk grid olacak şekilde göster
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ödev 1</title>
+
+    <style>
+        .buton {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            gap: 3px
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="sonuc" class="buton"></div>
+
+
+    <script>
+
+        const sonuc = document.getElementById("sonuc");
+
+        for (let i = 0; i <= 100; i++) {
+            const btn = document.createElement("button");
+            btn.textContent = 0;
+            sonuc.appendChild(btn);
+
+            btn.onclick = function () {
+                btn.textContent = Number(btn.textContent) + 1;
+            }
+
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>
