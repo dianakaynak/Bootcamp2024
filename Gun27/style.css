@@ -3,3 +3,8 @@
     height: 2rem;
     vertical-align: middle;
 }
+
+
+.done .todo-title {
+    text-decoration: line-through;
+}
