@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        form {
+            background-image: url(https://politikyolcom.teimg.com/crop/1280x720/politikyol-com/wp/uploads/2023/12/yeni-yil-yilbasi.jpg);
+            background-size: cover;
+            background-position: center;
+            padding: 4rem 2rem;
+            border-radius: 1rem;
+            width: 400px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            filter: grayscale(100%);
+            transition: border 0.3s ease;
+        }
+
+        form:hover {
+            filter: grayscale(0%);
+
+        }
+    </style>
+    <title>Çözüm</title>
+</head>
+
+<body>
+    <form id="frm">
+        <label for="ad">Adınız: </label>
+        <input id="ad" type="text" required>
+        <button>Beni Hatırla</button>
+    </form>
+
+
+    <script>
+        const frm = document.getElementById("frm");
+        const txtAd = document.getElementById("ad");
+
+
+        if (localStorage["veri"]) {
+            const hatirlananAd = localStorage["veri"];
+            hosgeldin(hatirlananAd);
+        }
+
+        function hosgeldin(ad) {
+            frm.innerHTML = `Hoşgeldin ${ad} (<a href="#" onclick="unut()" style="color: white;">Beni Unut</a>)`;
+        }
+
+
+        function unut() {
+            localStorage.removeItem("veri");
+            location.reload();
+        }
+
+        frm.onsubmit = function (event) {
+            event.preventDefault();
+            const ad = txtAd.value;
+            localStorage["veri"] = ad;
+            frm.textContent = `Merhaba ${ad} seni görmek güzel..`
+            setTimeout(() => location.reload(), 1500);
+        }
+
+
+    </script>
+</body>
+
+</html>
