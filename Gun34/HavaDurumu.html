@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hava Durumu</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(to right, #e286d5, #8362d7);
+            color: #181717;
+            padding: 20px;
+        }
+
+        #frmHava {
+            text-align: center;
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 400px;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        #frmHava label {
+            font-size: 1.3em;
+            color: #333;
+        }
+
+        #frmHava input {
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 100%;
+            font-size: 1em;
+            outline: none;
+        }
+
+        #frmHava button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 12px;
+            background-color: #8e4caf;
+            color: #fff;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        #frmHava button:hover {
+            background-color: #e286d5;
+        }
+
+        #sonuc {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        #sonuc dt {
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-top: 10px;
+            color: #666;
+        }
+
+        #sonuc dd {
+            margin: 5px 0 15px;
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        #gorsel img {
+            width: 80px;
+            height: 80px;
+        }
+
+
+        @media (max-width: 480px) {
+
+            #frmHava,
+            #sonuc {
+                width: 100%;
+                padding: 15px;
+            }
+
+            #frmHava button,
+            #frmHava input {
+                font-size: 1em;
+            }
+
+            #sonuc dt,
+            #sonuc dd {
+                font-size: 1em;
+            }
+
+            #gorsel img {
+                width: 60px;
+                height: 60px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <form id="frmHava">
+        <label for="yer">Yer</label>
+        <input id="yer" type="text" placeholder="Şehir Adı Giriniz.." required>
+        <button>Hava Durumunu Öğren</button>
+    </form>
+
+    <dl id="sonuc">
+        <dt>Şehir</dt>
+        <dd id="sehir">-</dd>
+        <dt>Sıcaklık</dt>
+        <dd id="sicaklik">-</dd>
+        <dt>Açıklama</dt>
+        <dd id="aciklama">-</dd>
+        <dt>Görsel</dt>
+        <dd id="gorsel">-</dd>
+    </dl>
+
+    <script>
+        const frmHava = document.getElementById("frmHava");
+        const txtYer = document.getElementById("yer");
+        const ddSehir = document.getElementById("sehir");
+        const ddSicaklik = document.getElementById("sicaklik");
+        const ddAciklama = document.getElementById("aciklama");
+        const ddGorsel = document.getElementById("gorsel");
+
+
+        frmHava.onsubmit = function (event) {
+            event.preventDefault();
+
+            fetch(`https://api.openweathermap.org/data/2.5/weather?q=${txtYer.value}&appid=bb9fe60bfdc6210a364ae2068b98b309&units=metric&lang=tr`)
+                .then(res => res.json())
+                .then(data => {
+
+                    ddSehir.textContent = data.name;
+                    ddSicaklik.textContent = data.main.temp + "°C"
+                    ddAciklama.textContent = data.weather[0].description;
+                    ddGorsel.innerHTML = `<img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="hava durumu">`
+
+                });
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>
