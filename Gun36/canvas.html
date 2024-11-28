@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Üzerinde Çizim</title>
+    <style>
+        body {
+            background: linear-gradient(90deg, gray, #ccc)
+        }
+
+        canvas {
+            border: 20px solid black;
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas width="500" height="500"></canvas>
+    <script>
+        //https://www.w3schools.com/html/html5_canvas.asp
+
+
+        const canvas = document.querySelector("canvas");
+        const ctx = canvas.getContext("2d");
+
+        ctx.moveTo(250, 110);
+        ctx.lineTo(500, 500);
+        ctx.lineTo(250, 250);
+        ctx.lineTo(0, 500);
+        ctx.lineTo(250, 110);
+        //boya diyorsun
+        ctx.fill();//içini dolduruyor
+        // ctx.stroke(); sadece çiziyor
+
+
+        ctx.beginPath();
+        ctx.arc(100, 140, 50, 0, 2 * Math.PI);
+        ctx.fillStyle = "brown";
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(400, 140, 50, 0, 2 * Math.PI);
+        ctx.strokeStyle = "brown";
+        ctx.lineWidth = 20;
+        ctx.stroke();
+
+
+        //eski şekli etkilemesin diye beginPath yapıyoruz
+        ctx.beginPath();
+        ctx.moveTo(125, 55);
+        ctx.lineTo(375, 55);
+        ctx.lineWidth = 10;
+        ctx.strokeStyle = "blue";
+        ctx.stroke();
+
+        //içi boş dikdörtgen
+        ctx.strokeStyle = "red";
+        ctx.lineWidth = 5;
+        ctx.strokeRect(180, 390, 140, 70);
+
+        //içi dolu dikdörtgen
+        ctx.fillStyle = "gold"
+        ctx.fillRect(220, 310, 50, 50);
+
+        let metin = "--Zorluklar,büyümenin başlangıcıdır.--";
+
+        ctx.font = "14px Arial";
+        ctx.fillStyle = "black"
+
+
+        let gen = ctx.measureText(metin).width;
+        ctx.fillText(metin, (canvas.width - gen) / 2, 487)
+
+    </script>
+</body>
+
+</html>

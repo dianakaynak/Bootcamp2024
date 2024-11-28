@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas-Loading</title>
+    <style>
+        body {
+            background-color: black;
+        }
+
+        canvas {
+            border: 1px solid white;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas width="400" height="400"></canvas>
+
+    <script>
+        const canvas = document.querySelector("canvas");
+        const ctx = canvas.getContext("2d")
+
+        const sa = -Math.PI / 2;//start angle
+        let oran = 1;
+        ctx.arc(200, 200, 100, sa, sa + Math.PI * 2 * oran);
+        ctx.strokeStyle = "green";
+        ctx.lineWidth = 20;
+        ctx.stroke();
+
+    </script>
+</body>
+
+</html>
