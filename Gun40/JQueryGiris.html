@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery Giriş</title>
+</head>
+
+<body>
+    <h1 id="baslik"></h1>
+
+    <ul>
+        <li>Pattaya</li>
+        <li>Ankara</li>
+        <li>Kentau</li>
+        <li>Gaziantep</li>
+        <li>Iğdır</li>
+        <li>Konya</li>
+        <li>Denizli</li>
+        <li>İstanbul</li>
+        <li>Bayburt</li>
+        <li>Konya</li>
+    </ul>
+
+    <h2>Rakammatik</h2>
+    <div id="rakamlar">
+        <button>0</button>
+        <button>0</button>
+        <button>0</button>
+        <button>0</button>
+        <button>0</button>
+        <button>0</button>
+    </div>
+    <p><small>Gizli Şifreyi Bilirseniz Tüm İçerik Kaybolacaktır</small></p>
+
+    <script src="jquery-3.7.1.min.js"></script>
+    <script>
+        //#1 başlık id li elementin metnini "JQuery Öğreniyorum" yap
+        //1a saf js
+        // const baslik = document.getElementById("baslik");
+        // baslik.textContent = "JQuery Öğreniyorum"
+
+        //1b JQUERY ile
+        $("#baslik").text("JQuery Öğreniyorum");
+
+        //2 BAŞLIĞA BORDER VER
+        //2a saf js
+        // const baslik = document.getElementById("baslik");
+        // baslik.style.border = "1px solid black"
+
+        //2b jquery
+        $("#baslik").css("border", "1px solid black");
+
+        //3# başlığın title attributune bir değer ata
+        // document.getElementById("baslik").setAttribute("title", "bu bir başlıktır")
+
+
+        $("#baslik").attr("title", "I ♥ JQuery");
+
+        //#4 başlıktan sonra hr ekle
+        // let hr=document.createElement("hr")
+        // document.getElementById("baslik").after(hr)
+
+        $("#baslik").after("<hr>");
+
+        //#5 tüm şehirlerin sonuna gülücük koy
+
+        // document.querySelectorAll("li").forEach((li, indeks) => {
+        //     li.textContent += ":) -" + indeks;
+        // })
+
+        // $("li").each((indeks, el) => el.append(":) -" + indeks))
+
+        //#6 şehirlwein sonuna gülücük başına index koy
+        $("li").each(function (i) {
+            $(this).append(" :)");
+            $(this).prepend("(" + i + ")")
+        })
+
+        //ÖNEMLİ NOT:this keywordune sırayla öğelerin atanmasını istiyorsanız arrow func yerine klasik func kullanın
+
+        //içinde n harfi içeren li öğelerini kırmızı yap
+
+        $("li").each(function () {
+            if ($(this).text().includes("u"))
+                $(this).css("color", "red")
+        })
+
+        //içinde a harfi içermeyenleri arka plan rengini sarı yap
+
+        $("li").
+            filter((i, el) => !$(el).text().includes("a"))
+            .css("background", "yellow");
+
+
+        //tüm li öğelerin metinlerini toptan al ve bir paragrafa koy
+        //o paragrafı da listenin altına koy
+
+        $("ul").after("<p>" + $("li").text() + "</p>")
+
+
+        //7.indexteki(0 dan başlayarak) li öğesini başa taşı
+        // $("ul").prepend($("li:nth-child(8)"));
+        $("ul").prepend($("li").eq(7));
+
+        //KAYAN LİSTE
+        //SANİYEDE BİR HER ELEMENT BİR ALTA KAYSIN
+
+        setInterval(function () {
+            $("ul").prepend($("li").last())
+        }, 1000)
+
+
+        //ya içerenleri büyük harfe çevir
+
+        $("li:contains('ya')").css("text-transform", "uppercase")
+
+
+        $("button").click(function () {
+            let sayi = Number($(this).text());
+            $(this).text((sayi + 1) % 10);
+        })
+
+        //GİZLİ BİR ŞİFRE BELİRLEYELİM
+        //ONU RAKAMMATİKTEN GİRERSE SAYFADAKİ HERŞEY SİLSİN
+
+
+        let gizli = "839967"
+        gizli = "100001"
+
+        $("#rakamlar>button").click(function () {
+            let girilen = $("button").text();
+            if (girilen == gizli) {
+                $("body").html("");//BÖLÜM SONU ♥
+
+                $("html, body").css({
+                    "height": "100%"
+                    , "margin": 0
+                })
+                $("body").css({
+                    "background": "url(dii.jpg) center",
+                    "background-size": "cover"
+                })
+            }
+        })
+
+    </script>
+</body>
+
+</html>
